@@ -20,13 +20,9 @@ jobs:
         with:
           node-version: 20
 
-      - name: Install dependencies
-        working-directory: ./scripts
-        run: npm ci
-
       - name: Build feeds
         working-directory: ./scripts
-        run: npm run build:feeds
+        run: node build-feeds.js
 
       - name: Deploy to data branch
         run: |
@@ -37,7 +33,7 @@ jobs:
           git rm -rf .
 
           cp -r dist/* ./
-
           git add .
           git commit -m "chore: update aggregated price feeds"
+
           git push origin --force HEAD:data
