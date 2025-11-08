@@ -1,0 +1,43 @@
+name: Build and Publish Aggregated Price Feeds
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        working-directory: ./scripts
+        run: npm ci
+
+      - name: Build feeds
+        working-directory: ./scripts
+        run: npm run build:feeds
+
+      - name: Deploy to data branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          git checkout --orphan data-temp
+          git rm -rf .
+
+          cp -r dist/* ./
+
+          git add .
+          git commit -m "chore: update aggregated price feeds"
+          git push origin --force HEAD:data
