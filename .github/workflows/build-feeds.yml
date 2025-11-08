@@ -21,7 +21,6 @@ jobs:
           node-version: 20
 
       - name: Build feeds
-        working-directory: ./scripts
         run: node build-feeds.js
 
       - name: Deploy to aggregated-feeds branch

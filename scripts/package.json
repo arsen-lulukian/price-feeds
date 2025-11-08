@@ -1,5 +1,0 @@
-{
-  "scripts": {
-    "build:feeds": "node ./build-feeds.js"
-  }
-}
