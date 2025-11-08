@@ -33,10 +33,7 @@ jobs:
           git checkout --orphan aggregated-feeds
           git rm -rf .
 
-          # Copy built artifacts from repo-level dist into branch root
-          cp -r dist/. ./
-          # Remove dist so only root files are committed
-          rm -rf dist
+          # Files are already built into the repo root
           git add .
           git commit -m "chore: update aggregated price feeds"
 
