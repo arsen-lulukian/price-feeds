@@ -24,19 +24,21 @@ jobs:
         working-directory: ./scripts
         run: node build-feeds.js
 
-      - name: Deploy to aggreagated-feeds branch
+      - name: Deploy to aggregated-feeds branch
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
           # Start a fresh orphan branch for artifacts
-          git checkout --orphan aggreagated-feeds
+          git checkout --orphan aggregated-feeds
           git rm -rf .
 
           # Copy built artifacts from repo-level dist into branch root
           cp -r dist/. ./
+          # Remove dist so only root files are committed
+          rm -rf dist
           git add .
           git commit -m "chore: update aggregated price feeds"
 
-          # Force-push the orphan commit to the aggreagated-feeds branch
-          git push origin --force HEAD:aggreagated-feeds
+          # Force-push the orphan commit to the aggregated-feeds branch
+          git push origin --force HEAD:aggregated-feeds

@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 const feedsDir = path.resolve(__dirname, '..');
-const distDir = path.resolve(__dirname, '..', 'dist');
+const distDir = path.resolve(__dirname, '..');
 
 const files = fs
   .readdirSync(feedsDir)
