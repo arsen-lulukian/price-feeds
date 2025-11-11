@@ -4,13 +4,15 @@
     "ethereum": [
       {
         "address": "0xbe79f828e0cd909dc54ad576e8778fedeaecbde8",
-        "provider": "Swarm"
+        "provider": "Swarm",
+        "tokenAddress": "0xBa4AC703ca1825A5D32E356C92e9A770FeEd35b9"
       }
     ],
     "polygon": [
       {
         "address": "0xb832a0C4416AdE1b9fA05aBBCB5E11E8E9E7F951",
-        "provider": "Swarm"
+        "provider": "Swarm",
+        "tokenAddress": "0x973B1894d688f2e45FE9C573Ef19a8f519d32208"
       }
     ],
     "arbitrum": [

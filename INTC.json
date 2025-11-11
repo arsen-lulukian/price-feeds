@@ -4,31 +4,36 @@
     "ethereum": [
       {
         "address": "0x7df785142bd6116e4743229077a334c5f9130247",
-        "provider": "Swarm"
+        "provider": "Swarm",
+        "tokenAddress": "0x7934afacb40b60d83d8ad8266ed5746253f2f458"
       }
     ],
     "polygon": [
       {
         "address": "0x1a12AE5A267b64984BF05De191b205eD13e68B8F",
-        "provider": "Swarm"
+        "provider": "Swarm",
+        "tokenAddress": "0x4cc746a365ae257d49d36a03eb1ef865054cb16b"
       }
     ],
     "base": [
       {
         "address": "0xe6f4bc173ea5d206495581b930dddd47dd4da211",
-        "provider": "Swarm"
+        "provider": "Swarm",
+        "tokenAddress": "0xbd1180ed09c46df35534fba9cc7e4ee870dcc755"
       }
     ],
     "bsc": [
       {
         "address": "0xa2Df763f8FAD611AE70C9055Cc39Fc415CEcf6e7",
-        "provider": "Swarm"
+        "provider": "Swarm",
+        "tokenAddress": "0xf096d8bec2f0df7a38876dc846e5f2860b2c83c6"
       }
     ],
     "plasma": [
       {
         "address": "0x3252bcFE9C4b5059CACB78f56DCE349d0CfABC98",
-        "provider": "Swarm"
+        "provider": "Swarm",
+        "tokenAddress": "0xf096d8bec2f0df7a38876dc846e5f2860b2c83c6"
       }
     ]
   }
